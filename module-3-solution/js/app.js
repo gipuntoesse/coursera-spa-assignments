@@ -53,8 +53,8 @@
                    var items=response.data.menu_items;
                    for (var index=0; index<items.length;index++)
                    {
-
-                   if(items[index].description.toLowerCase().indexOf(search)!==-1)
+                   var searchLowerCase=search.toLowerCase();
+                   if(items[index].description.toLowerCase().indexOf(searchLowerCase)!==-1)
                    {
                    foundItems.push(items[index]);
                    }
