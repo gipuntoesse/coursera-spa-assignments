@@ -1,0 +1,22 @@
+<div class="found-list">
+
+            <span class="container">
+                <div class="row"  ng-repeat="item in list">
+                    <div class="col-md-1">
+                       <strong> {{item.short_name}}</strong>
+                    </div>
+                    <div class="col-md-2">
+                        {{item.name}}
+                    </div>
+                    <div class="col-md-7">
+                        <i>{{item.description}}</i>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" ng-click="onRemove({index:$index});">Don't want this!</button>
+                    </div>
+                </div>
+                <div class="text-danger" ng-if="warning"><strong>{{warning}}</strong></div>
+            </span>
+
+
+</div>
