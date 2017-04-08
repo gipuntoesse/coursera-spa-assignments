@@ -1,0 +1,10 @@
+<ul class="fa-ul">
+    <li ng-repeat="cat in $ctrl.categories">
+        <i class="fa-li fa fa-angle-right" aria-hidden="true"></i>
+        <a ui-sref="categories.items({catShortName:cat.short_name})">{{cat.name}}</a>
+        <!--<a ui-sref="items({catShortName:cat.short_name})">{{cat.name}}</a>-->
+    </li>
+
+
+
+</ul>
