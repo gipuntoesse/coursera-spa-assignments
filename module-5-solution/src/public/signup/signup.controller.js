@@ -27,14 +27,22 @@ SignupController.$inject=['MenuService'];
 
        $ctrl.submit= function(short_name){
 
+           var userdata={
+               firstname: $ctrl.user.firstname,
+               lastname: $ctrl.user.lastname,
+               email: $ctrl.user.email,
+               phone: $ctrl.user.phone
+           };
+           MenuService.uploadUserdata(userdata);
+
            MenuService.uploadFavouriteMenuItems(short_name).then(function (response) {
                $ctrl.result_message=response;
            });
 
-
-
-
         }
+
+
+
 
 
 
