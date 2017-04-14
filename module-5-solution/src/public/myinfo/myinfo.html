@@ -1,13 +1,34 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
 
     <div class="row" xmlns="http://www.w3.org/1999/html">
         <div  class="text-center col-xs-12">
-            <h1>My Favourite Dish</h1><br>
+            <h1>My Info</h1><br>
         </div>
     </div>
     <div class="row">
 
         <div  ng-if="myinfoCtrl.signedUp">
+
+            <div class="col-sm-5">
+                <div class="col-sm-6">
+                    <strong>First name :</strong><br>
+                    <strong>Last  name :</strong><br>
+                    <strong>Email :</strong><br>
+                    <strong>Phone number :</strong><br>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <span>{{myinfoCtrl.myUserData.firstname}}</span><br>
+                    <span>{{myinfoCtrl.myUserData.lastname}}</span><br>
+                    <span>{{myinfoCtrl.myUserData.email}} </span><br>
+                    <span>{{myinfoCtrl.myUserData.phone}}</span><br>
+                </div>
+
+
+
+            </div>
+
             <menu-item
                     menu-item="myinfoCtrl.myFavouriteDish">
             </menu-item>
