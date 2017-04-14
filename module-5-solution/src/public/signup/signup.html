@@ -1,0 +1,66 @@
+
+<div class="container">
+    <div class="row">
+        <div class="text-center col-xs-12">
+            <h1>Sign Up Form</h1><br>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-xs-4 col-xs-offset-4">
+            <fieldset>
+
+                <form name="signupForm" novalidate>
+
+                    <input class="form-control" type="text" name="firstname" ng-model="signupCtrl.user.firstname"
+                           required="true" placeholder="Firstname">
+                <span
+                        ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">
+            Firstname must not be empty
+          </span><br>
+                    <input class="form-control" type="text" name="lastname" ng-model="signupCtrl.user.lastname" required
+                           placeholder="Lastname">
+                  <span
+                          ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">
+            Lastname must not be empty
+          </span><br>
+                    <input class="form-control" type="email" name="email" ng-model="signupCtrl.user.email" required
+                           placeholder="Email">
+                  <span
+                          ng-if="(signupForm.email.$error.email || signupForm.email.$error.required) && signupForm.email.$touched">
+            Invalid email
+          </span><br>
+                    <input class="form-control" type="text" name="phone" ng-model="signupCtrl.user.phone" required
+                           pattern="(\d{3})-(\d{3})-(\d{4})" placeholder="Phone ###-###-####">
+                  <span
+                          ng-if="(signupForm.phone.$error.invalid || signupForm.phone.$error.required)  && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####
+          </span><br>
+                    <br>
+                    <br>
+                    <input class="form-control" type="text" name="menunumber" ng-model="signupCtrl.user.menunumber"
+                           placeholder="Short name for menu item"><br>
+                    <h5><em class="text-justify">Please note that every time you press the submit button,
+                        you are also deleting your possible previous preference</em></h5>
+                    <button class="btn btn-default" ng-disabled="signupForm.$invalid"
+                            ng-click="signupCtrl.submit(signupCtrl.user.menunumber)">Submit
+                    </button>
+                    <br>
+
+
+                </form>
+
+
+            </fieldset>
+            <span class="text-center">{{signupCtrl.result_message}}</span>
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>

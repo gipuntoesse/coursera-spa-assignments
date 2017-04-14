@@ -1,0 +1,23 @@
+<div class="container">
+
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        <div  class="text-center col-xs-12">
+            <h1>My Favourite Dish</h1><br>
+        </div>
+    </div>
+    <div class="row">
+
+        <div  ng-if="myinfoCtrl.signedUp">
+            <menu-item
+                    menu-item="myinfoCtrl.myFavouriteDish">
+            </menu-item>
+
+
+        </div>
+        <div ng-if="!myinfoCtrl.signedUp" class="text-center"><span>Not signed yet.<a ui-sref="public.signup">Sign up Now.</a></span></div>
+
+
+    </div>
+
+</div>
+
