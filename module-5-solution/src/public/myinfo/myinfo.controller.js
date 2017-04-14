@@ -9,14 +9,15 @@ angular.module('public')
     .controller('MyInfoController',MyInfoController);
 
 
-    MyInfoController.$inject=['myFavouriteDish','signedUp'];
+    MyInfoController.$inject=['myFavouriteDish','signedUp','myUserData'];
 
-    function MyInfoController(myFavouriteDish,signedUp){
+    function MyInfoController(myFavouriteDish,signedUp,myUserData){
 
 
         var  $ctrl=this;
         $ctrl.myFavouriteDish=myFavouriteDish;
         $ctrl.signedUp=signedUp;
+        $ctrl.myUserData=myUserData;
 
 
 
