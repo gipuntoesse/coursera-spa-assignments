@@ -61,6 +61,10 @@ function routeConfig ($stateProvider) {
 
          signedUp:['MenuService', function (MenuService) {
             return MenuService.getSignedUp();
+          }],
+
+          myUserData:['MenuService', function (MenuService) {
+            return MenuService.getUserdata();
           }]
 
         }
