@@ -9,6 +9,7 @@ MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
 service.pref={};
+  service.userdata={};
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
@@ -16,6 +17,15 @@ service.pref={};
     });
   };
 
+service.getUserdata=function(){
+  return service.userdata;
+}
+
+
+  service.uploadUserdata=function(data){
+
+    service.userdata=data;
+  };
 
   service.getMenuItems = function (category) {
     var config = {};
@@ -37,6 +47,7 @@ service.pref={};
   service.uploadFavouriteMenuItems = function (shortName) {
 
     service.pref={};
+
 
     var config = {};
 
@@ -61,6 +72,7 @@ service.pref={};
 
             if (myinfo.length === 0)
             {
+              service.userdata={};
               message="No such menu number exists";
               return message;
             }
@@ -73,7 +85,7 @@ service.pref={};
 
           }
           else {
-
+            service.userdata={};
             message="No such menu number exists";
             return message;
 
@@ -81,7 +93,7 @@ service.pref={};
 
 
     }).catch(function (error) {
-
+          service.userdata={};
           message="No such menu number exists";
 
         }).finally(function(){
